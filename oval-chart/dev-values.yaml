@@ -102,7 +102,7 @@ ingress:
   tls: 
     - secretName: dev-oval-provider-tls
       hosts:
-         - provier.dev.oval.pepro.io
+         - provider.dev.oval.pepro.io
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
