@@ -24,7 +24,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/portal-oval:dev
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/oval-provider:dev
   deployment:
     needs: build
     runs-on: 'ubuntu-latest'
@@ -39,5 +39,5 @@ jobs:
       - name: Deploy
         uses: WyriHaximus/github-action-helm3@v2
         with:
-          exec: helm upgrade dev-oval ./oval-chart --install --wait --atomic --namespace=dev-oval --set=app.name=dev_oval --values=./oval-chart/dev-values.yaml
+          exec: helm upgrade dev-provider-oval ./oval-chart --install --wait --atomic --namespace=dev-oval --set=app.name=provider_oval --values=./oval-chart/dev-values.yaml
           kubeconfig: '${{ secrets.DEV_KUBECONFIG }}'
