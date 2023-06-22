@@ -46,7 +46,9 @@ image:
     - name: "NETWORK_NAME"
       value: "ovalx"
     - name: "NETWORK_URL"
-      value: "http://172.15.0.3:8545/"
+      value: "{"8996": "http://172.15.0.3:8545/"}"
+    - name: "PRIVATE_KEY"
+      value: "0xc594c6e5def4bab63ac29eed19a134c130388f74f019bc74b8f4389df2837a58"
 #    - name: "OCEAN_ADDRESS"
 #      value: "0xCfDdA22C9837aE76E0faA845354f33C62E03653a"
     - name: EVENTS_RPC
