@@ -23,9 +23,9 @@ RUN python3.8 -m pip install setuptools
 RUN python3.8 -m pip install wheel
 RUN python3.8 -m pip install .
 
-ENV NETWORK_URL='http://127.0.0.1:8545'
+ENV NETWORK_URL='https://rpc.goerli.eth.gateway.fm'
 
-ENV PROVIDER_PRIVATE_KEY=''
+ENV PROVIDER_PRIVATE_KEY='secrets.PROVIDER_PRIVATE_KEY'
 ENV PROVIDER_ADDRESS=''
 
 ENV AZURE_ACCOUNT_NAME=''
@@ -48,6 +48,7 @@ ENV AZURE_SHARE_INPUT='compute'
 ENV AZURE_SHARE_OUTPUT='output'
 
 ENV OCEAN_PROVIDER_URL='http://0.0.0.0:8030'
+
 
 ENV OCEAN_PROVIDER_WORKERS='1'
 ENV OCEAN_PROVIDER_TIMEOUT='9000'

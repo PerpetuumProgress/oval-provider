@@ -39,7 +39,7 @@ jobs:
       - name: Deploy
         uses: WyriHaximus/github-action-helm3@v2
         env:
-          PROVIDER_PRIVATE_KEY: '${{ secrets.PROVIDER_PRIVATE_KEY }}'
+          providerPrivateKey : ${{ secrets.PROVIDER_PRIVATE_KEY }}
         with:
           exec: helm upgrade dev-provider-oval ./oval-chart --install --wait --atomic --namespace=dev-oval --set=app.name=provider_oval --values=./oval-chart/dev-values.yaml
           kubeconfig: '${{ secrets.DEV_KUBECONFIG }}'

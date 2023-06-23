@@ -35,6 +35,8 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
+            - name: PROVIDER_PRIVATE_KEY
+              value: "{{ .Values.providerPrivateKey }}"
             - name: "EVENTS_RPC"
               value: {{.Values.rpc_url}}
             {{- range .Values.image.env }}
