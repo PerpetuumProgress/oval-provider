@@ -47,13 +47,12 @@ image:
 #      value: "Goerli test network"
     - name: "NETWORK_URL"
       value: "https://rpc.goerli.eth.gateway.fm"
-#      value: "{\"5\": \"https://goerli.infura.io/v3/\"}"
     - name: "PROVIDER_PRIVATE_KEY"
-      value: "e4565e02fd4aad6b84b5fdb8bd5728558c1df3b8c84554ca9a5b59e602fef18f"
+      value: ${{ secrets.PROVIDER_PRIVATE_KEY }}
 #    - name: "OCEAN_ADDRESS"
 #      value: "0xCfDdA22C9837aE76E0faA845354f33C62E03653a"
-#    - name: EVENTS_RPC	    - name: EVENTS_RPC
- #     value: "http://89.58.39.151:10002"
+#    - name: "EVENTS_RPC"
+#     value: "http://89.58.39.151:10002"
     - name: "BLOCKS_CHUNK_SIZE"
       value: "5000"
     - name: "EVENTS_HTTP"
