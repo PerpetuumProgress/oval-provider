@@ -24,7 +24,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/portal-oval:int
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/oval-provider:int
   deployment:
     needs: build
     runs-on: 'ubuntu-latest'
@@ -39,5 +39,5 @@ jobs:
       - name: Deploy
         uses: WyriHaximus/github-action-helm3@v2
         with:
-          exec: helm upgrade int-oval ./oval-chart --install --wait --atomic --namespace=int-oval --set=app.name=int_oval --set=providerPrivateKey=${{secrets.PROVIDER_PRIVATE_KEY}} --values=./oval-chart/int-values.yaml
+          exec: helm upgrade int-provider-oval ./oval-chart --install --wait --atomic --namespace=int-oval --set=app.name=int_provider_oval --set=providerPrivateKey=${{secrets.PROVIDER_PRIVATE_KEY}} --values=./oval-chart/int-values.yaml
           kubeconfig: '${{ secrets.INT_KUBECONFIG }}'
