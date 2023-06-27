@@ -39,5 +39,5 @@ jobs:
       - name: Deploy
         uses: WyriHaximus/github-action-helm3@v2
         with:
-          exec: helm upgrade int-oval ./oval-chart --install --wait --atomic --namespace=int-oval --set=app.name=int_oval --values=./oval-chart/int-values.yaml
+          exec: helm upgrade int-oval ./oval-chart --install --wait --atomic --namespace=int-oval --set=app.name=int_provider_oval --values=./oval-chart/int-values.yaml
           kubeconfig: '${{ secrets.INT_KUBECONFIG }}'
