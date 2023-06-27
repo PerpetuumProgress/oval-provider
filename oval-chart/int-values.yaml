@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: perpetuumprogress/oval-metadatacache
+  repository: perpetuumprogress/oval-provider
   pullPolicy: Always
   # Set environment variables
   env:
@@ -45,6 +45,8 @@ image:
       value: "7298808"
     - name: "NETWORK_NAME"
       value: "goerli"
+    - name: "NETWORK_URL"
+      value: "https://rpc.goerli.eth.gateway.fm"
     - name: "OCEAN_ADDRESS"
       value: "0xCfDdA22C9837aE76E0faA845354f33C62E03653a"
     - name: "BLOCKS_CHUNK_SIZE"
@@ -65,7 +67,7 @@ serviceAccount:
   annotations: {}
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
-  name: "dev-oval-metadatacache-run-service-account"
+  name: "int-oval-provider-run-service-account"
 
 podAnnotations: {}
 
@@ -82,7 +84,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 5000
+  port: 8030
 
 ingress:
   enabled: true
@@ -93,14 +95,14 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: metadatacache.int.oval.pepro.io
+    - host: provider.int.oval.pepro.io
       paths:
         - path: /
           pathType: Prefix
   tls: 
-    - secretName: int-oval-metadatacache-tls
+    - secretName: int-oval-provider-tls
       hosts:
-         - metadatacache.int.oval.pepro.io
+         - provider.int.oval.pepro.io
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
