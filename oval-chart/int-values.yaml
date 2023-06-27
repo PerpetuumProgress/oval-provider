@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: perpetuumprogress/oval-metadatacache
+  repository: perpetuumprogress/oval-provider
   pullPolicy: Always
   # Set environment variables
   env:
