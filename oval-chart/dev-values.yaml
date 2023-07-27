@@ -57,6 +57,8 @@ image:
       value: "5000"
     - name: "EVENTS_HTTP"
       value: "1" 
+    - name: "OPERATOR_SERVICE_URL"
+      value: "http://0.0.0.0:8050" 
     # Overrides the image tag whose default is the chart appVersion.
   tag: "dev"
 
