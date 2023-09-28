@@ -12,7 +12,7 @@ image:
     - name: "CONFIG_FILE"
       value: "config.ini"
     - name: "NETWORK_URL"
-      value: "https://rpc.goerli.eth.gateway.fm"
+      value: "https://rpc2.sepolia.org"
 #    - name: "PROVIDER_PRIVATE_KEY"
 #      value: "{{.Values.providerPrivateKey}}"
 #    - name: "OCEAN_ADDRESS"
